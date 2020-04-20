@@ -21,7 +21,7 @@
 
 <body>
     <header id="header">
-        <h1>自留田地，畅所欲言</h1>
+        <h1>自留天地，畅所欲言</h1>
     </header>
     <main id="app">
         <aside>
@@ -83,7 +83,7 @@
     function getData(page = 0) {
         query.descending('createdAt').skip(page * 20).limit(20).find().then(function(results) {
             if (results.length == 0) {
-                alert('之前没 b 过了')
+                alert('留言区空白呢，快发表您的感想吧~')
             } else {
                 let resC = results;
                 reqData = false;

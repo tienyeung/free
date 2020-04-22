@@ -29,8 +29,8 @@
                 这是我的一片自留天地，无所谓点赞、评论、关注，在这里，我可以畅所欲言，抒发我心中所思所想，不关注外界反馈，只专注于自我情绪。
             </p>
         </aside>
-        <p class="tip">现在总共 发布 了 {{count}} 条</p>
-        <section class="item" v-for="item in contents" v-cloak>
+        <p class="tip">现在总共发布了 {{count}} 条</p>
+        <section class="item" v-bind:class="'type-'+item.attributes.type" v-for="item in contents" v-cloak>
             <p v-html='item.attributes.content'></p>
             <time v-bind:datetime="item.attributes.time">{{item.attributes.time}}</time>
         </section>
@@ -190,7 +190,7 @@
         /* border-top-color: aquamarine; */
         text-align: justify;
     }
-    .item:hover{
+    /* .item:hover{
         font-weight: 300;
         font-style: normal;
         line-height: 1.8rem;
@@ -202,7 +202,7 @@
         border-top: 6px solid;
         border-top-color: aquamarine;
         text-align: justify;
-    }
+    } */
     
     .item a {
         text-decoration: none;
@@ -238,6 +238,16 @@
     .load-btn:hover:active {
         background: #666;
         color: #fff;
+    }
+
+    .type-0 {
+        /* border-top-color: #D4DFE6; */
+    }
+    .type-1 {
+        border-top-color: #7f9eb2;
+    }
+    .type-2 {
+        border-top-color: #F68657;
     }
 </style>
 
